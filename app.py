@@ -62,5 +62,8 @@ if st.button("Predict Final Grade (G3)"):
         prediction = model.predict(input_df)[0]
         st.success(f"📚 Predicted Final Grade (G3): {prediction:.2f}")
     except Exception as e:
-        st.error("❌ Prediction failed. Error:")
-        st.code(str(e))
+        st.error("❌ Prediction failed. See error details below:")
+        st.code(repr(e))  # Shows full error type + message
+        st.write("📊 Input DataFrame shape:", input_df.shape)
+        st.write("📋 Input DataFrame preview:")
+        st.dataframe(input_df)
