@@ -58,7 +58,7 @@ if st.button("Predict Final Grade (G3)"):
 
     input_df = pd.DataFrame(input_data)
 
-       try:
+    try:
         # ✅ Ensure column order matches training
         input_df = input_df[model.feature_names_in_]
 
@@ -70,4 +70,3 @@ if st.button("Predict Final Grade (G3)"):
         st.write("📊 Input DataFrame shape:", input_df.shape)
         st.write("📋 Input DataFrame preview:")
         st.dataframe(input_df)
-
